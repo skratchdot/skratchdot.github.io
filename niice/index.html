@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>niice.co : Open Search Example</title>
+	<link rel="search" type="application/opensearchdescription+xml" href="search.xml" title="Niice.co Design Search" />
+	<style>
+		code pre {
+			border: 2px solid #999;
+			border-radius: 5px;
+			padding: 20px;
+			background: #eee;
+		}
+	</style>
+</head>
+<body>
+	<h1>Niice.co : Open Search Example</h1>
+	
+	<p>
+		By adding the following <strong>&lt;link /&gt;</strong> tag to your head:
+	</p>
+	
+	<code>
+<pre>
+&lt;link rel="search" type="application/opensearchdescription+xml" href="search.xml" title="Niice.co Design Search" /&gt;			
+</pre>
+	</code>
+	
+	<p>
+		That points to the following xml file:
+	</p>
+	
+	<code>
+<pre>
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/"&gt;
+	&lt;ShortName&gt;Niice.co Design Search&lt;/ShortName&gt;
+	&lt;Description&gt;Search for inspiration on Niice.co&lt;/Description&gt;
+	&lt;Tags&gt;design inspiration dribbble behance designspiration&lt;/Tags&gt;
+	&lt;Image height="16" width="16" type="image/vnd.microsoft.icon"&gt;http://niice.co/favicon.ico&lt;/Image&gt;
+	&lt;Url type="text/html" template="http://www.niice.co/?search={searchTerms}"/&gt;
+	&lt;Query role="example" searchTerms="cat"/&gt;
+&lt;/OpenSearchDescription&gt;
+</pre>
+	</code>
+	
+	<p>
+		You can register search options for your site in browsers. For instance, in Firefox, I will
+		have the option to add "Niice.co Design Search" to my list of managed search engines:
+	</p>
+	
+	<img src="screenshot.png" />
+</body>
+</html>
