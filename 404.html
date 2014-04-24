@@ -12,9 +12,9 @@
 </head>
 <body>
 <script>
-	(function (loc) {
-	    loc.href = loc.href.replace(loc.hostname, 'skratchdot.com');
-	}(document.location));
+(function (l) {
+    l.replace(l.href.replace(l.hostname, 'skratchdot.com').replace(l.protocol, 'http:'));
+}(document.location));
 </script>
 </body>
 </html>
