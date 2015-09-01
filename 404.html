@@ -11,15 +11,20 @@
       var l = document.location;
       l.replace(l.href.replace(l.hostname, 'skratchdot.com').replace(l.protocol, 'http:'));
     };
+    var replace404 = function(html) {
+      document.open();
+      document.write(html);
+      document.close();
+    };
     jQuery(document).ready(function() {
       var paths = document.location.pathname.split('/');
       if (paths.length >= 2 && paths[0] === '' && paths[1].length > 0) {
-        jQuery.ajax({
+        $.ajax({
           url: '/' + paths[1] + '/404.html',
           dataType: 'html',
           cache: false
         }).done(function(html, textStatus, jqXHR) {
-          jQuery('html').html(html);
+          replace404(html);
         }).error(function() {
           redirect();
         });
